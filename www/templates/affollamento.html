@@ -1,0 +1,191 @@
+<ion-view title="Situazione attuale" id="page_affollamento">
+  <ion-content padding="true" class="has-header" >
+      <ion-list id="affollamento-list" ng-controller="AffollamentoController">
+          <ion-item id="affollamento-item-grado" style="text-align: center;">
+              <p><img src="{{affollamento.info.gaugeimage}}"></p>
+              <p><strong>{{affollamento.info.grado_di_affollamento}}</strong></p>
+              
+                            <span class="item-note">
+                  <br>Ultimo aggiornamento: {{affollamento.info.ultimo_aggiornamento}}
+              </span>
+          </ion-item>
+          
+    
+      </ion-list>
+
+      <ion-list id="attesa-list" ng-controller="AttesaController">
+          <ion-item class="item item-divider item-dark">
+              Dettaglio situazione attuale
+              
+          </ion-item>
+          
+          <ion-item id="affollamento-item-attesa">
+              <strong>In attesa</strong>
+              <div  class="row">
+                  <div class="col-40">
+                      Box medico
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.medico.attesa.r"></span>
+                      <span ng-bind-html="attesa.info.medico.attesa.g"></span>
+                      <span ng-bind-html="attesa.info.medico.attesa.v"></span>                      
+                      <span ng-bind-html="attesa.info.medico.attesa.b"></span>                      
+                  </div>  
+              </div>
+
+              <div  class="row">
+                  <div class="col-40">
+                      Box chirurgico 
+                  </div>
+                  <div class="col">
+
+                      <span ng-bind-html="attesa.info.chirurgico.attesa.r"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.attesa.g"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.attesa.v"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.attesa.b"></span>
+                  </div>  
+
+              </div>
+
+              <div class="row">
+
+                  <div class="col-40">
+                      Box ginecologico   
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.ginecologico.attesa.r"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.attesa.g"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.attesa.v"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.attesa.b"></span>
+                  </div>
+
+              </div>
+
+
+              <div class="row">
+
+                  <div class="col-40">
+                      Box ortopedico
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.ortopedico.attesa.r"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.attesa.g"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.attesa.v"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.attesa.b"></span>
+                  </div>
+
+              </div>      
+              
+              <div  class="row">
+                  <div class="col-40">
+                      Box bassa intensità
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.bassaintensita.attesa.r"></span>
+                      <span ng-bind-html="attesa.info.bassaintensita.attesa.g"></span>
+                      <span ng-bind-html="attesa.info.bassaintensita.attesa.v"></span>                      
+                      <span ng-bind-html="attesa.info.bassaintensita.attesa.b"></span>                      
+                  </div>  
+              </div>              
+
+          </ion-item>                    
+
+          <ion-item id="affollamento-item-trattamento">
+              <strong>In trattamento</strong>
+              <div  class="row">
+                  <div class="col-40">
+                      Box medico
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.medico.trattamento.r"></span>
+                      <span ng-bind-html="attesa.info.medico.trattamento.g"></span>
+                      <span ng-bind-html="attesa.info.medico.trattamento.v"></span>                      
+                      <span ng-bind-html="attesa.info.medico.trattamento.b"></span>                      
+                  </div>  
+              </div>
+
+              <div  class="row">
+                  <div class="col-40">
+                      Box chirurgico 
+                  </div>
+                  <div class="col">
+
+                      <span ng-bind-html="attesa.info.chirurgico.trattamento.r"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.trattamento.g"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.trattamento.v"></span>
+                      <span ng-bind-html="attesa.info.chirurgico.trattamento.b"></span>
+                  </div>  
+
+              </div>
+
+              <div class="row">
+
+                  <div class="col-40">
+                      Box ginecologico   
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.ginecologico.trattamento.r"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.trattamento.g"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.trattamento.v"></span>
+                      <span ng-bind-html="attesa.info.ginecologico.trattamento.b"></span>
+                  </div>
+
+              </div>
+
+
+              <div class="row">
+
+                  <div class="col-40">
+                      Box ortopedico
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.ortopedico.trattamento.r"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.trattamento.g"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.trattamento.v"></span>
+                      <span ng-bind-html="attesa.info.ortopedico.trattamento.b"></span>
+                  </div>
+
+              </div>              
+
+              <div class="row">
+
+                  <div class="col-40">
+                      Box bassa intensità
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.bassaintensita.trattamento.r"></span>
+                      <span ng-bind-html="attesa.info.bassaintensita.trattamento.g"></span>
+                      <span ng-bind-html="attesa.info.bassaintensita.trattamento.v"></span>
+                      <span ng-bind-html="attesa.info.bassaintensita.trattamento.b"></span>
+                  </div>
+
+              </div>                  
+          </ion-item>                    
+
+          <ion-item id="affollamento-item-osservazione">
+              <strong>In osservazione/attesa di ricovero</strong>
+              
+              <div  class="row">
+                  <div class="col-40">
+                      &nbsp;&nbsp;
+                  </div>
+                  <div class="col">
+                      <span ng-bind-html="attesa.info.totale_oss.r"></span>
+                      <span ng-bind-html="attesa.info.totale_oss.g"></span>
+                      <span ng-bind-html="attesa.info.totale_oss.v"></span>                      
+                      <span ng-bind-html="attesa.info.totale_oss.b"></span>                      
+                  </div>  
+              </div>
+
+
+          </ion-item>   
+          
+          <ion-item>
+
+          </ion-item>
+          
+      </ion-list>      
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+{
+  "type": "ionic1",
+  "name": "PS Casilino",
+  "app_id": "7fd90011",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "integrations": {}
+}

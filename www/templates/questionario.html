@@ -1,0 +1,98 @@
+<ion-view 
+    id="questionario" 
+    ng-controller="QuestionarioController"
+    title=" "
+    cache-view="false">
+    <ion-content >   
+        
+        <form class="list" id="questionario-form">
+            <div class="item text-center">
+                <p id="questionario-titolo" class="positive-bg">{{infoGen.nome}}</p>
+                <p id="questionario-descrizione" class="light-bg">{{infoGen.descrizione}}</p>
+            </div>
+            <div class="item questionario-risposta" ng-repeat="(id, info) in form">
+                <div class="balanced-bg questionario-domanda item-text-wrap">{{info.testo}}</div>
+                
+                <div ng-if="info.tipo === 'radio'">
+                    <ion-radio
+                        class="item-text-wrap"
+                        ng-repeat="(cod, opz) in info.codici"
+                        ng-value="cod"
+                        ng-model="formData[id]"
+                        name="{{id}}">
+                        {{opz}}
+                    </ion-radio>
+                </div>
+                
+                <label 
+                    ng-if="info.tipo === 'textarea'" 
+                    class="item item-input" >
+                    <textarea 
+                        name="{{id}}" 
+                        class="questionario-textarea"
+                        ng-model="formData[id]">
+                            
+                    </textarea>
+                    
+                </label>
+                
+                <label 
+                    ng-if="info.tipo === 'input'" 
+                    ng-model="formData[id]"
+                    class="item item-input" >
+                    <input name="{{id}}" type="text">
+                    
+                </label>   
+                
+                <label
+                    ng-if="info.tipo === 'checkbox'"
+                    class="item">
+                    <ion-checkbox 
+                        class="checkbox-balanced" 
+                        
+                        ng-model="formData[id]"
+                        ng-true-value ="'true'"
+                        ng-false-value ="'false'"
+                        name="{{id}}">
+                      {{info.codici[1000]}} 
+                    </ion-checkbox>
+                    
+                </label>
+                
+            </div>
+          
+        </form>
+            
+        <div class="item questionario-buttons text-center">
+            <input 
+                type="hidden" 
+                size="50"
+                id="questionario-uuid" 
+                ng-model="uuid"
+                ng-value="{{uuid}}"
+                readonly>            
+            <button 
+                class="button button-positive"
+                ng-if="idesiste == false" 
+                ng-click="salva();">
+                <i class="icon ion-paper-airplane"></i><br>
+                Invia il tuo contributo
+            </button> 
+            
+            <button 
+                class="button button-energized"
+                ng-if="idesiste == true" 
+                ng-click="salva();">
+                <i class="icon ion-edit"></i><br>
+                Modifica le tue risposte
+            </button><br><br><button 
+                class="button button-assertive"
+                ng-if="idesiste == true" 
+                ng-click="elimina();">
+                <i class="icon ion-trash-a"></i><br>
+               Elimina le tue risposte
+            </button>                   
+            
+        </div>
+    </ion-content>    
+</ion-view>

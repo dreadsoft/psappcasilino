@@ -1,0 +1,131 @@
+<ion-view title="Paziente" id="page9">
+    <ion-content padding="true" class="has-header" ng-controller="ScavengerController">
+        
+        <div class="row row-center responsive-lg">
+            
+            <div class="col col-50">
+               
+                <label class="item item-input">
+                    
+                    <input 
+                        type="text" 
+                        id="paziente-codice" 
+                        placeholder="Codice paziente"
+                        ng-model="codicePaziente">
+
+                </label>
+
+
+            </div>
+            <div class="col col-25">
+
+                <button id="paziente-button-scan"
+                        class="button button-positive icon-left 
+                        ion-qr-scanner button-block"
+                        ng-click="scanBarcode()"
+                        ng-model="codicePaziente">Scansiona codice</button>             
+
+            </div>            
+            <div class="col col-25">
+                <button id="paziente-button-informazioni" 
+                        class="button button-positive button-block
+                        icon-right ion-search"
+                        ng-click="getJson()">Aggiorna informazioni
+                </button>   
+                
+
+            </div>
+
+        </div>
+
+
+
+
+        <textarea hidden ng-model="info.id" style="width: 100%" rows="3"></textarea>                   
+
+        <br>
+        <ion-list id="paziente-info" ng-class="infoClass">
+            
+            <!-- :::::::::::::: Box di appartenenza -->
+            
+            <ion-item class="item item-divider">
+                Box di appartenenza
+            </ion-item>
+            
+            
+            <ion-item class="item" style='text-align: right;'>
+
+                <span class="font-size: larger;">{{info.boxPS}}</span>
+                <img src="img/{{info.boximg}}" alt="{{info.boxPS}}"
+                     style="width: 48px; height: 48px; vertical-align: middle;">
+            </ion-item>
+            
+            <!-- :::::::::::::: Codice urgenza -->
+
+            <ion-item class="item item-divider">
+                Codice urgenza
+            </ion-item>
+            
+            
+            
+            <ion-item class="item-icon-left" 
+                      ng-class="info.codiceStyle" 
+                      id="paziente-list-item31" 
+                      ui-sref="assegnazioneCodici">
+                <i class="icon ion-record "></i>{{info.codice}}
+            </ion-item>
+            
+
+
+            <!-- :::::::::::::: Stato ricovero -->
+            
+            <ion-item class="item item-divider">
+                Posizione attuale
+            </ion-item>            
+            
+            <ion-item class="item-icon-left positive" id="paziente-list-item24">
+                <i class="icon  {{info.statoRicoveroStyle}}"></i>{{info.statoRicovero}} 
+
+            </ion-item>
+            
+            
+            
+            <!-- :::::::::::::: Indicazioni ricovero -->
+            
+            <ion-item 
+                class="item item-icon-left item-icon-right positive" 
+                ng-class="indicazioniVis"
+                id="paziente-ricovero-indicazioni"
+                ng-click="navigaRicovero(info.ricoveroIndirizzo)">
+                <i class="icon ion-home"></i>
+                {{info.ricoveroStruttura}} 
+                <span class="item-note">
+                    {{info.ricoveroIndirizzoUser}}
+
+                </span>
+                <i class="icon ion-android-arrow-dropright-circle"></i>
+            </ion-item>  
+            
+            
+            
+            <!-- :::::::::::::: Laboratorio e radiologia -->
+            
+            <ion-item class="item item-divider" 
+                      ng-class="labradioVis">Informazioni ricovero</ion-item>
+            
+            <ion-item 
+                id="paziente-labradio" 
+                ng-class="labradioVis" 
+                style="font-size: larger; 
+                text-align: justify;
+                line-height: 2em;">
+                
+                {{info.laboratorio}} {{info.radiologia}}
+
+            </ion-item>
+        </ion-list>
+
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view title="Indicazioni" id="route-info">
+    <ion-content padding="true" 
+                 class="has-header" 
+                 ng-controller="PhotocrumbController"
+                 data-ng-init="possibiliPartenze();">
+        
+        
+
+            <h4>Selezionare un punto di partenza</h4>
+            <div id="route-possibili-partenze">
+                
+                <button class="button 
+                        button-balanced 
+                        button-spaziato" 
+                        
+                        ng-repeat="(id, p) in partenzePossibili"
+                        ng-click="selezionaPartenza(id)">{{p}}</button>
+            </div>
+            <br><br>
+        
+        <div  id="photocrumb-area">
+            
+            <ion-slide-box id="slideBoxIndicazioni" active-slide="slideIndex">
+                <ion-slide ng-repeat="(index, val) in imgRoute">
+
+                    <img class="photocrumb-img" ng-src="{{val}}">
+                    <div class="balanced-bg photocrumb-info light">{{txtRoute[index]}}</div>
+
+                </ion-slide> 
+
+            </ion-slide-box>
+        </div>        
+
+    </ion-content>
+</ion-view>
+
+

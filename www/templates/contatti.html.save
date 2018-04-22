@@ -1,0 +1,23 @@
+›B›B›B›B
+<ion-view title="Contatti" id="page6">
+  <ion-content padding="true" class="has-header">
+    <h3 id="contatti-heading1" style="color:#000000;">Pronto soccorso</h3>
+    <ion-list id="contatti-list11">
+      <ion-item class="item-icon-right positive" id="contatti-list-item6" href="tel:+39 06 23188 241">Telefono
+        <i class="icon ion-ios-telephone"></i>
+      </ion-item>
+      <ion-item class="item-icon-right positive" id="contatti-list-item7" href="mailto:prontosoccorso.polcas@eurosanita.it">Email
+        <i class="icon ion-email"></i>
+      </ion-item>
+    </ion-list>
+    <h3 id="contatti-heading2" style="color:#000000;">Medicina d'urgenza</h3>
+    <ion-list id="contatti-list12">
+      <ion-item class="item-icon-right positive" id="contatti-list-item8" href="tel:+39 06 23188 306">Telefono
+        <i class="icon ion-ios-telephone"></i>
+      </ion-item>
+      <ion-item class="item-icon-right positive" id="contatti-list-item9" href="mailto:medicinadurgenza@policlinicocasilino.it">Email
+        <i class="icon ion-email"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

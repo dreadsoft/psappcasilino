@@ -1,0 +1,45 @@
+<ion-view title="Dimostrativo PS" id="questionario">
+    <ion-content ng-controller="QuestionarioController">  
+
+        <div class="list" id="questionario-maindiv">
+            <label class="item item-input">
+                <input type="text" id="questionario-uuid" ng-value="deviceid" readonly>
+            </label>
+            <div class="item questionario-risposta" ng-repeat="(id, info) in form">
+                <div class="balanced-bg questionario-domanda">{{info.testo}}</div>
+                
+                <div ng-if="info.tipo === 'radio'">
+                    <ion-radio
+                        class="item-text-wrap"
+                        ng-repeat="(cod, opz) in info.codici"
+                        ng-value="cod"
+                        name="{{id}}">
+                        {{opz}}
+                    </ion-radio>
+                </div>
+                
+                <label ng-if="info.tipo === 'textarea'" class="item item-input" >
+                    <textarea name="{{id}}" class="questionario-textarea"></textarea>
+                    
+                </label>
+                
+                <label ng-if="info.tipo === 'input'" class="item item-input" >
+                    <input name="{{id}}" type="text">
+                    
+                </label>                
+                
+            </div>
+          
+        </div>
+            
+        <div class="item">
+            <button 
+                class="button button-block button-positive"
+                ng-if="idesiste==='false'" 
+                ng-click="salva();">
+                <i class="icon ion-save"></i>
+                Salva dati
+            </button>       
+        </div>
+    </ion-content>    
+</ion-view>

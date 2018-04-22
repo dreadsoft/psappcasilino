@@ -1,0 +1,76 @@
+<ion-view title="Policlinico Casilino" id="page2">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="home-raggiungi">
+            <ion-item class="item-icon-left item-positive" 
+                      id="home-raggiungi-il-ps" 
+                      ng-controller="HomeController"
+                      ng-click="navigatore('Via Pietro Belon 71, Roma')"
+                      >
+                <i class="icon ion-map"></i>Raggiungi il Pronto Soccorso
+            </ion-item>
+            
+            <ion-item class="item-icon-left item-energized" 
+                      id="home-affollamento" 
+                      ui-sref="affollamento">
+                <i class="icon ion-stats-bars"></i>Situazione attuale
+            </ion-item>
+            
+            <ion-item class="item-icon-left item-balanced" 
+                      id="home-paziente" 
+                      ui-sref="paziente">
+                <i class="icon ion-android-person"></i>Paziente
+            </ion-item>
+            
+            <ion-item class="item-icon-left item-calm" 
+                      id="home-questionari" 
+                      ui-sref="questionari-index">
+                <i class="icon ion-android-checkbox-outline"></i>Questionari
+            </ion-item>
+
+            <ion-item class="item-icon-left item-royal" 
+                      id="home-informazioni" 
+                      ui-sref="informazioni">
+                <i class="icon ion-ios-information"></i>Informazioni
+            </ion-item>
+            <ion-item class="item-icon-left item-dark" 
+                      id="home-test" 
+                      ui-sref="qrcode">
+                <i class="icon ion-code"></i>Test sviluppo
+            </ion-item>	
+
+        </ion-list>
+        <br><br>
+        <hr class="dash-separator">
+        <h4 class="dark">Collegamenti utili</h4>
+        <ion-list id="home-link">
+            <ion-item class="item-icon-left" 
+                      onclick="window.open( 'http://www.casilinoemergenza.it', 
+                                            '_system', 
+                                            'location=yes')">
+                <i class="icon ion-ios-home"></i>Casilino emergenza             
+            </ion-item>
+            
+            
+            <ion-item class="item-icon-left" 
+                      onclick="window.open( 'http://www.policlinicocasilino.it', 
+                                            '_system', 
+                                            'location=yes')">
+                <i class="icon ion-android-globe"></i>Policlinico Casilino           
+            </ion-item>
+            
+            
+            <ion-item class="item-icon-left" 
+                      onclick="window.open( 'http://farmaturni.federfarmaroma.com/orario.aspx', 
+                                            '_system', 
+                                            'location=yes')">
+                          <i class="icon ion-medkit"></i>
+                          Farmacie di turno (CAP 00169)
+            </ion-item>
+        </ion-list>
+
+        
+    </ion-content>
+
+
+</ion-view>
+    

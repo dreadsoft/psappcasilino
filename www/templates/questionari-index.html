@@ -1,0 +1,21 @@
+<ion-view title="Indice Questionari" id="questionari-index">
+    <ion-content ng-controller="QuestionariListaController">
+        
+        <div class="list" style="padding: 1em;">
+            <button
+                class="item item-positive button button-block item-text-wrap questionario-index-nome"
+                ng-repeat="a in attivi"
+                ng-click="apriQuestionario(a.id)"
+                ui-sref="questionario"
+                ui-sref-opts="{reload: true}">
+                {{a.nome}}<br>
+                <span class="questionario-index-desc text-center">{{a.descrizione}}</span>
+                   
+                
+            </button>
+            
+            
+        </div
+
+    </ion-content>    
+</ion-view>
